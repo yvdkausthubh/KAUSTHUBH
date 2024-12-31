@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiments - IoT Revolution</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #2c3e50;
+            background-color: #ecf0f1; /* Light gray background */
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #34495e; /* Dark gray navbar */
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #ecf0f1; /* Light gray text */
+            text-decoration: none;
+            margin: 15px;
+            font-size: 16px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            color: #00bcd4; /* Cyan color on hover */
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .menu a {
+            display: inline-block;
+        }
+
+        /* Hamburger Icon */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 4px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+        }
+
+        /* Menu on small screens */
+        .menu-items {
+            display: flex;
+        }
+
+        .menu-items.hide {
+            display: none;
+        }
+
+        /* Content */
+        .container {
+            margin-top: 120px; /* Increased space for better alignment with navbar */
+            padding: 20px;
+            max-width: 900px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2980b9; /* Blue heading */
+        }
+
+        .experiment {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .experiment h3 {
+            margin-top: 0;
+            color: #1abc9c; /* Green titles */
+        }
+
+        .experiment p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .menu-items {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .menu-items.show {
+                display: flex;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+    <script>
+        // Function to toggle hamburger menu
+        function toggleMenu() {
+            var menu = document.getElementById("menu-items");
+            menu.classList.toggle("show");
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="menu">
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="menu-items" id="menu-items">
+                <a href="/">Home</a>
+                <a href="/interview-questions">Interview Questions</a>
+                <a href="/experiments">Experiments</a>
+                <a href="/simulation-projects">Simulation Projects</a>
+                <a href="/articles">Articles</a>
+            </div>
+        </div>
+    </nav>
+    </div>
+
+</body>
+
+</html>

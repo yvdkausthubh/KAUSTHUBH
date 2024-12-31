@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles - IoT Revolution</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #2c3e50;
+            background-color: #ecf0f1; /* Light gray background */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #34495e; /* Dark gray navbar */
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a {
+            color: #ecf0f1; /* Light gray text */
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #1abc9c; /* Green hover effect */
+        }
+
+        /* Content */
+        .container {
+            margin: 80px auto 0; /* Spacing below the fixed navbar */
+            padding: 20px;
+            max-width: 900px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2980b9; /* Blue heading */
+        }
+
+        .article {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .article h3 {
+            margin-top: 0;
+            color: #1abc9c; /* Green titles */
+        }
+
+        .article p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="/">Home</a>
+        <a href="/interview-questions">Interview Questions</a>
+        <a href="/experiments">Experiments</a>
+        <a href="/simulation-projects">Simulation Projects</a>
+        <a href="/articles">Articles</a>
+    </nav>
+        </div>
+
+</body>
+</html>

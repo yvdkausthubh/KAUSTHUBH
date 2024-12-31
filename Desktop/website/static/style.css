@@ -1,0 +1,141 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
+    padding-top: 60px; /* Space for fixed navigation */
+}
+
+/* Navigation */
+nav {
+    background: #2c3e50;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 15px 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #2980b9;
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    margin-bottom: 40px;
+}
+
+h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-home {
+    background: url('home-bg.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    height: 100vh;
+}
+
+.intro-content h1 {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.cta-button {
+    background-color: #2980b9;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #3498db;
+}
+
+/* Answer Toggle */
+.answer {
+    display: none;
+    padding: 10px;
+    background: #ecf0f1;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.question {
+    background: #3498db;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: left;
+}
+
+.question:hover {
+    background: #2980b9;
+}
+
+/* Video Gallery */
+.video-gallery {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.video-item {
+    width: 45%;
+    text-align: center;
+}
+
+.video-item video {
+    width: 100%;
+    height: auto;
+}
+
+/* Footer */
+footer {
+    background: #34495e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .video-gallery {
+        flex-direction: column;
+    }
+}

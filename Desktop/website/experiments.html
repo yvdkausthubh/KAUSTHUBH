@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Revolution</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #2c3e50;
+            background-color: #ecf0f1; /* Light gray background */
+        }
+
+        nav {
+            background-color: #34495e; /* Dark gray navbar */
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center; /* Center the navbar items */
+            align-items: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            flex-wrap: wrap;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Adjust spacing between links for desktop view */
+        nav a {
+            color: #ecf0f1; /* Light gray text */
+            text-decoration: none;
+            margin: 0 8px; /* Reduced margin between links */
+            font-size: 16px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            color: #00bcd4; /* Cyan color on hover */
+        }
+
+        /* Menu on small screens */
+        .menu-items {
+            display: flex;
+            justify-content: center; /* Center align items */
+            align-items: center; /* Center the items vertically */
+        }
+
+        /* Hamburger menu adjustments */
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 4px;
+            background-color: #ecf0f1;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* For mobile screens */
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav a {
+                display: none;
+                margin: 10px 0;
+                padding-left: 10px;
+            }
+
+            .menu-icon {
+                display: flex;
+            }
+
+            nav.active a {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="/">Home</a>
+        <a href="/interview-questions">Interview Questions</a>
+        <a href="/experiments">Experiments</a>
+        <a href="/simulation-projects">Simulation Projects</a>
+        <a href="/articles">Articles</a>
+
+        <!-- Hamburger Icon -->
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            var nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+
+</body>
+
+</html>

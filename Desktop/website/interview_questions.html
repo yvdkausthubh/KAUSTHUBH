@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Questions - IoT Revolution</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <style>
+        /* Global Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            color: #2c3e50; /* Dark text color */
+            background-color: #ecf0f1; /* Light gray background */
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #34495e; /* Dark navbar background */
+            padding: 15px 20px; /* Adjusted padding */
+            display: flex;
+            justify-content: center; /* Space out items */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #ecf0f1; /* Light gray text */
+            font-size: 16px;
+            text-decoration: none;
+            margin: 15px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            color: #00bcd4; /* Cyan color on hover */
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .menu a {
+            display: inline-block;
+        }
+
+        /* Hamburger Icon */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 4px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+        }
+
+        /* Menu on small screens */
+        .menu-items {
+            display: flex;
+        }
+
+        .menu-items.hide {
+            display: none;
+        }
+
+        /* Content Section */
+        .container {
+            margin-top: 120px; /* Increased space for better alignment with navbar */
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #00bcd4; /* Cyan heading */
+            margin-top: 40px; /* Add space above the section title */
+        }
+
+        /* Question Styling */
+        .question {
+            background-color: #f1f1f1; /* Light background for questions */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .question h3 {
+            margin-top: 0;
+            color: #00bcd4; /* Cyan titles */
+        }
+
+        .answer {
+            display: none;
+            font-size: 18px;
+            color: #333; /* Darker text color */
+            padding-top: 10px;
+            background-color: #f9f9f9; /* Light background for answers */
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            box-shadow: none;
+            margin-top: 10px;
+            padding: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #34495e; /* Darker footer background */
+            padding: 20px 10px;
+            color: white;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #ecf0f1; /* Light color for footer links */
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        footer a:hover {
+            background-color: #00bcd4; /* Cyan color for hover */
+        }
+
+        /* Responsive design */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+
+            footer {
+                padding: 20px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .menu-items {
+                flex-direction: column;
+                width: 100%;
+                display: none;
+            }
+
+            .menu-items.show {
+                display: flex;
+            }
+        }
+    </style>
+    <script>
+        // Function to toggle answer visibility
+        function toggleAnswer(id) {
+            var answer = document.getElementById(id);
+            if (answer.style.display === "none" || answer.style.display === "") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+
+        // Function to toggle hamburger menu
+        function toggleMenu() {
+            var menu = document.getElementById("menu-items");
+            menu.classList.toggle("show");
+        }
+    </script>
+</head>
+
+<body>
+    <nav>
+        <div class="menu">
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="menu-items" id="menu-items">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('interview_questions') }}">Interview Questions</a>
+                <a href="{{ url_for('experiments') }}">Experiments</a>
+                <a href="{{ url_for('simulation_projects') }}">Simulation Projects</a>
+                <a href="{{ url_for('articles') }}">Articles</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content Section -->
+    <div class="container">
+        <h2>BASIC QUESTIONS</h2>
+
+        <!-- Basic IoT Questions and Answers -->
+        <div class="question" onclick="toggleAnswer('answer1')">
+            <h3>1. What is IoT? Can you explain it in simple terms?</h3>
+        </div>
+        <div class="answer" id="answer1">
+            <p>IoT, or the Internet of Things, is a network of physical devices like appliances, vehicles, and sensors that are connected to the internet, allowing them to collect, exchange, and act on data. For example, a smart thermostat adjusts your home’s temperature based on your preferences.</p>
+        </div>
+
+        <div class="question" onclick="toggleAnswer('answer2')">
+            <h3>2. How does IoT differ from traditional internet-connected systems?</h3>
+        </div>
+        <div class="answer" id="answer2">
+            <p>IoT focuses on connecting everyday physical objects (e.g., sensors, home appliances) to the internet for automation and data-driven insights, while traditional systems primarily involve computers and smartphones for communication and computation.</p>
+        </div>
+
+        <div class="question" onclick="toggleAnswer('answer3')">
+            <h3>3. What are the main components of an IoT system?</h3>
+        </div>
+        <div class="answer" id="answer3">
+            <p>Devices/Sensors: Collect data.<br>
+            Connectivity: Transmits data (Wi-Fi, Bluetooth, LoRa).<br>
+            Data Processing: Often cloud-based or edge computing.<br>
+            User Interface: For monitoring and controlling IoT systems.</p>
+        </div>
+
+        <div class="question" onclick="toggleAnswer('answer4')">
+            <h3>4. Can you name a few popular IoT devices and their applications?</h3>
+        </div>
+        <div class="answer" id="answer4">
+            <p>Smart thermostats: Control home temperature (e.g., Nest).<br>
+            Wearables: Monitor health (e.g., Fitbit).<br>
+            Connected cars: Provide navigation and vehicle monitoring.<br>
+            Smart agriculture: Sensors optimize irrigation.</p>
+        </div>
+
+        <div class="question" onclick="toggleAnswer('answer5')">
+            <h3>5. Explain the role of sensors and actuators in IoT.</h3>
+        </div>
+        <div class="answer" id="answer5">
+            <p>Sensors collect data from the environment (e.g., temperature, humidity), while actuators act based on data received (e.g., turning on a fan when it’s too warm).</p>
+        </div>
+
+        <div class="question" onclick="toggleAnswer('answer6')">
+            <h3>6. What is the difference between IoT and M2M (Machine to Machine) communication?</h3>
+        </div>
+        <div class="answer" id="answer6">
+            <p>While both involve devices communicating with each other, IoT is broader in scope and includes a wide range of consumer and business applications, whereas M2M communication typically focuses on industrial systems.</p>
+        </div>
+
+        <h2>INTERMEDIATE QUESTIONS</h2>
+
+        <!-- Intermediate IoT Questions and Answers -->
+        <div class="question" onclick="toggleAnswer('answer7')">
+            <h3>1. How do you secure IoT devices?</h3>
+        </div>
+        <div class="answer" id="answer7">
+            <p>Securing IoT devices involves using encryption for data transmission, implementing secure authentication protocols, and keeping firmware up to date to patch vulnerabilities.</p>
+        </div>
+
+        <div class="question" onclick="toggleAnswer('answer8')">
+            <h3>2. What are the challenges with IoT data management?</h3>
+        </div>
+        <div class="answer" id="answer8">
+            <p>Challenges include dealing with the massive volume of data generated, ensuring its accuracy, processing real-time data, and maintaining data security and privacy.</p>
+        </div>
+
+        <div class="question" onclick="toggleAnswer('answer9')">
+            <h3>3. Explain edge computing in the context of IoT.</h3>
+        </div>
+        <div class="answer" id="answer9">
+            <p>Edge computing involves processing data closer to the source (i.e., on IoT devices or nearby servers) rather than sending all data to the cloud, which reduces latency and bandwidth usage.</p>
+        </div>
+
+        <div class="question" onclick="toggleAnswer('answer10')">
+            <h3>4. What are the different communication protocols used in IoT?</h3>
+        </div>
+        <div class="answer" id="answer10">
+            <p>Common IoT protocols include MQTT (Message Queuing Telemetry Transport), CoAP (Constrained Application Protocol), and HTTP/HTTPS for data communication. Other protocols like Zigbee, LoRa, and Bluetooth are used for short-range communication.</p>
+        </div>
+
+        <div class="question" onclick="toggleAnswer('answer11')">
+            <h3>5. What is the role of a gateway in an IoT system?</h3>
+        </div>
+        <div class="answer" id="answer11">
+            <p>A gateway serves as a bridge between IoT devices and the cloud or other systems. It ensures secure communication, can perform some local data processing, and helps to manage device connections.</p>
+        </div>
+
+        <div class="question" onclick="toggleAnswer('answer12')">
+            <h3>6. What are some common IoT platforms used for device management?</h3>
+        </div>
+        <div class="answer" id="answer12">
+            <p>Popular IoT platforms include AWS IoT, Google Cloud IoT, Microsoft Azure IoT, and IBM Watson IoT, which provide cloud-based solutions for managing devices, data, and applications.</p>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 YVD Kausthubh. All rights reserved. <a href="mailto:contact@yourdomain.com">Contact Us</a></p>
+    </footer>
+
+</body>
+
+</html>
